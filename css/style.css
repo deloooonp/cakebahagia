@@ -154,7 +154,6 @@ body {
 
 .about {
   background-color: var(--bg);
-  border-bottom: 3px solid var(--primary);
 }
 
 .about h2 span,
@@ -225,6 +224,7 @@ body {
   background-color: var(--bg);
   min-height: 100vh;
   border-bottom: 3px solid var(--primary);
+  border-top: 3px solid var(--primary);
 }
 
 .menu h2,
