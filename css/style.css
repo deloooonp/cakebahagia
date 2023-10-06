@@ -224,6 +224,7 @@ body {
   background-color: var(--bg);
   min-height: 100vh;
   border-bottom: 3px solid var(--primary);
+  border-top: 3px solid var(--primary);
 }
 
 .menu h2,
@@ -267,15 +268,13 @@ body {
 
 .contact {
   min-height: 100vh;
-  background-image: url(../img/menu-bg.jpg.jpg);
+  background-image: url();
 }
 .contact .row {
   display: flex;
   margin-top: 2rem;
   background-color: #f5d5ab;
-  border-top-right-radius: 10%;
-  border-bottom-right-radius: 10%;
-  border: 5px solid var(--primary);
+  border: 3px solid var(--primary);
 }
 
 .contact .row .map {
