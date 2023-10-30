@@ -22,7 +22,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   color: #ffffff;
-  background-color: var(--bg);
+  background: var(--bg);
 }
 
 /* Navbar */
@@ -38,6 +38,10 @@ body {
   left: 0;
   right: 0;
   z-index: 9999;
+}
+.navbar .navbar-logo2 img {
+  /* height: 80px; */
+  /* padding: 0rem 0rem 0rem 1rem; */
 }
 
 .navbar .navbar-logo {
@@ -87,6 +91,98 @@ body {
   display: none;
 }
 
+/* Navbar Search Form */
+.navbar .search-form {
+  position: absolute;
+  top: 102.5%;
+  right: 7%;
+  background-color: #da5a2c;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+  border-radius: 1rem;
+  border: 3px solid white;
+}
+
+.navbar .search-form ::placeholder {
+  color: white;
+}
+
+.navbar .search-form.active {
+  transform: scaleY(1);
+}
+
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: white;
+  padding: 1rem;
+  background-color: #a27759;
+  border-radius: 1rem;
+}
+
+.navbar .search-form label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: var(--bg);
+}
+
+/* Shopping Cart */
+.shopping-cart {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: 100vh;
+  width: 35rem;
+  padding: 0 1.5rem;
+  background-color: #fff;
+  color: var(--bg);
+  transition: 0.3s;
+}
+
+.shopping-cart.active {
+  right: 0;
+}
+
+.shopping-cart .cart-item {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #666;
+  position: relative;
+}
+
+.shopping-cart h3 {
+  font-size: 1.6rem;
+  padding-bottom: 0.5rem;
+}
+
+.shopping-cart .item-price {
+  font-size: 1.2rem;
+}
+
+.shopping-cart .remove-item {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.shopping-cart img {
+  height: 6rem;
+  border-radius: 50%;
+}
+
+.shopping-cart .remove-item:hover {
+  color: var(--primary);
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -97,6 +193,7 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
+  background-attachment: fixed;
 }
 
 .hero::after {
@@ -158,18 +255,21 @@ body {
 
 .about h2 span,
 .menu h2 span,
+.products h2 span,
 .contact h2 span {
   color: var(--primary);
 }
 
 .about,
 .menu,
+.products,
 .contact {
   padding: 10rem 7% 1.4rem;
 }
 
 .about h2,
 .menu h2,
+.products h2,
 .contact h2 {
   text-align: center;
   font-size: 2.6rem;
@@ -227,13 +327,27 @@ body {
   border-top: 3px solid var(--primary);
 }
 
+.menu .row .menu-card a {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--button);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px rgba(2, 2, 3, 0.5);
+  border: 1.5px solid white;
+}
+
 .menu h2,
+.products,
 .contact h2 {
   margin-bottom: 1rem;
   text-shadow: 2px 2px 5px rgba(1, 1, 3, 0.5);
 }
 
 .menu p,
+.products p,
 .contact p {
   text-align: center;
   max-width: 30;
@@ -264,11 +378,82 @@ body {
   margin: 1rem auto 0.5rem;
 }
 
+/* Products Section */
+.products .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.products .product-card {
+  text-align: center;
+  border: 1px solid #666;
+  padding: 2rem;
+}
+
+.products .product-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.products .product-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: #fff;
+  margin: 0.3rem;
+  border: 1px solid #666;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products .product-icons a:hover {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.products .product-image {
+  padding: 1rem 0;
+}
+
+.products .product-image img {
+  height: 25rem;
+}
+
+.products .product-content h3 {
+  font-size: 2rem;
+}
+
+.products .product-stars {
+  font-size: 1.7rem;
+  padding: 0.8rem;
+  color: var(--primary);
+}
+
+.products .product-stars .star-full {
+  fill: var(--primary);
+}
+
+.products .product-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.products .product-price span {
+  text-decoration: line-through;
+  font-weight: lighter;
+  font-size: 1rem;
+}
+
 /* Contact Section */
 
 .contact {
   min-height: 100vh;
   background-image: url();
+  background-color: var(--bg);
 }
 .contact .row {
   display: flex;
@@ -297,6 +482,10 @@ body {
   background-color: var(--bg);
   padding: left 2rem;
   border: 3px solid var(--primary);
+}
+
+.contact .row form .input-group i {
+  margin-left: 10rem;
 }
 
 .contact .row form .input-group ::placeholder {
@@ -390,10 +579,11 @@ footer .credit a {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: #fff;
+    background-color: rgba(245, 213, 171, 0.686);
     width: 30rem;
     height: 100vh;
     transition: 0.3s;
+    border-left: 3px solid white;
   }
 
   .navbar .navbar-nav.active {
