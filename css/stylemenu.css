@@ -369,7 +369,7 @@ body {
 .products .product-content h3 {
   font-size: 1.5rem;
   color: white;
-  text-shadow: 2px 3px 2px rgba(0, 0, 0, 1);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
 }
 
 .products .product-content a {
@@ -501,6 +501,22 @@ footer .credit a {
 
   .navbar .navbar-logo2 img {
     height: 5.5rem;
+  }
+
+  .products .product-image img {
+    height: 15rem;
+    border: 1px white solid;
+  }
+
+  .products .product-content a {
+    margin-top: 0.5rem;
+    padding: 0.6rem 4rem;
+    font-size: 1.3rem;
+  }
+
+  .products .product-content h3 {
+    font-size: 1.3rem;
+    color: white;
   }
 
   .contact .row {
